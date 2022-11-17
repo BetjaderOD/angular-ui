@@ -16,6 +16,8 @@ import {materialModules} from "./types/material-modules";
 import {appRouterModule} from "./shared/routers/app-routers.module";
 import {AuthModule} from "./modules/auth/auth.module";
 import {PersonalModule} from "./modules/personal/personal.module";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import {PersonalModule} from "./modules/personal/personal.module";
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
+    HttpClientModule,
     AuthModule,
     PersonalModule,
     ...materialModules

@@ -1,9 +1,28 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {UserLogin} from "../types/user";
+import {catchError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private loading:boolean = false;
 
-  constructor() { }
+  get isLoading (){
+    return this.loading
+  }
+
+  constructor(private  readonly  http: HttpClient) { }
+
+  login (payload:UserLogin): void{
+    this.loading = true
+    this.http.post<any>(`http://localhost:3000/api/auth`,payload,{ headers:{ 'Content-Type': 'application/json'}
+    }).pipe(
+      catchError((error) =>{
+        this.loading = false
+        return error
+      })
+    )
+  }
 }
