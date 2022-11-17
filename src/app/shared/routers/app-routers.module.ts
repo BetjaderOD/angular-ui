@@ -15,6 +15,10 @@ const routes: Routes = [
     component: SinginComponent,
   },
   {
+    path: 'personal',
+    component: MainPersonalComponent,
+  },
+  {
     path: '**',
     redirectTo: ''
   }
