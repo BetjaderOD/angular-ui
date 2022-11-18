@@ -4,11 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './shared/navigation/navigation.component';
+import { MatTableModule } from '@angular/material/table';
+import {FormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 // @ts-ignore
 import { AuthComponent } from './personal/service/auth/auth.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -31,8 +34,13 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     LayoutModule,
     HttpClientModule,
     AuthModule,
-    PersonalModule,
-    ...materialModules
+    PersonalModule,MatTableModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    ...materialModules,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
